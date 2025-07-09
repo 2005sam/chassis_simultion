@@ -1,0 +1,336 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/InteriorWheel.proto"
+EXTERNPROTO "../protos/ExteriorWheel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Asphalt.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.786 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.786 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.26469202183097196 0.010486782810007622 -0.9642759775942404 3.0652121777403045
+  position -0.46845081194454574 0.1466349339045881 0.8462609654711724
+  follow "robot"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 0 -0.3
+  floorSize 6 2
+}
+Robot {
+  translation -2.29218 -0.0625459 -0.213433
+  rotation -0.0005354439768664249 0.00017866448979308563 0.9999998406893612 3.0901730419535176
+  children [
+    Compass {
+    }
+    Camera {
+      translation -0.2 -1.4693e-06 0.05
+      rotation 0 0 1 -3.1415853071795863
+    }
+    DistanceSensor {
+      translation 0.2 0.22 0
+      rotation 0 0 1 7.33682e-06
+      name "ds_RB"
+    }
+    DistanceSensor {
+      translation 0.23 -0.23 0
+      rotation 0 0 1 7.33682e-06
+      name "ds_LB"
+    }
+    DistanceSensor {
+      translation -0.21 -0.23 0
+      rotation 0 0 1 -3.1415853071795863
+      name "ds_LF"
+    }
+    DistanceSensor {
+      translation -0.21 0.22 0
+      rotation 0 0 1 -3.1415853071795863
+      name "ds_RF"
+    }
+    DistanceSensor {
+      translation -4.28234e-07 0.24 0
+      rotation 0 0 1 1.5708
+      name "ds_R"
+    }
+    DistanceSensor {
+      translation 0 -0.18 0
+      rotation 0 0 1 -1.5707953071795862
+      name "ds_L"
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -217.6567617094925
+        axis 0 1 0
+        anchor -0.12 0.19 -0.04
+      }
+      device [
+        RotationalMotor {
+          name "lb_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.11948847465361653 0.18996058725360784 -0.04046059858124158
+        rotation 0 -0.9999999999999999 0 4.028459629784727
+        children [
+          ExteriorWheel {
+          }
+        ]
+        name "lb_wheel"
+        contactMaterial "ExteriorWheelMat"
+        boundingObject Pose {
+          rotation 1 0 0 1.5708003061004252
+          children [
+            Cylinder {
+              height 0.07
+              radius 0.05
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -144.1780084602665
+        axis 0 1 0
+        anchor 0.12 -0.19 -0.04
+      }
+      device [
+        RotationalMotor {
+          name "rf_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.1200154634393186 -0.19 -0.03995561664676466
+        rotation 8.193664864680367e-07 -0.9999999999982224 -1.698097983395544e-06 5.947931094216362
+        children [
+          ExteriorWheel {
+          }
+        ]
+        name "rf_wheel"
+        contactMaterial "ExteriorWheelMat"
+        boundingObject Pose {
+          rotation 1 0 0 1.5708003061004252
+          children [
+            Cylinder {
+              height 0.07
+              radius 0.05
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -89.30655584680093
+        axis 0 1 0
+        anchor -0.12 -0.19 -0.04
+      }
+      device [
+        RotationalMotor {
+          name "rb_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.12 -0.19 -0.04
+        rotation 0 -1 0 1.3419615462867223
+        children [
+          InteriorWheel {
+          }
+        ]
+        name "rb_wheel"
+        contactMaterial "InteriorWheelMat"
+        boundingObject Pose {
+          rotation 1 0 0 1.5708003061004252
+          children [
+            Cylinder {
+              height 0.07
+              radius 0.05
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -15.827921979275107
+        axis 0 1 0
+        anchor 0.12 0.19 -0.04
+      }
+      device [
+        RotationalMotor {
+          name "lf_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.12 0.19 -0.04
+        rotation 0 -1 0 3.2615513649159342
+        children [
+          InteriorWheel {
+          }
+        ]
+        name "lf_wheel"
+        contactMaterial "InteriorWheelMat"
+        boundingObject Pose {
+          rotation 1 0 0 1.5708003061004252
+          children [
+            Cylinder {
+              height 0.07
+              radius 0.05
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Box {
+        size 0.4 0.3 0.1
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "my_controller"
+}
+Solid {
+  translation -5.593233672325135e-06 -0.21791492874577612 -0.19036528415753748
+  rotation -0.9999999983130017 -1.558683835775208e-05 -5.595575795967331e-05 0.20972548191213464
+  children [
+    DEF box Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 0.1 0.6 0.1
+      }
+    }
+  ]
+  boundingObject USE box
+  physics Physics {
+  }
+}
+Solid {
+  translation -4.099124880713557e-07 -0.6738923762507273 -0.2538458315195002
+  rotation -0.9999998338944969 -0.000400131473724257 0.0004148563394823226 0.004845060943715656
+  children [
+    DEF box Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 0.1 0.6 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE box
+  physics Physics {
+  }
+}
+Solid {
+  translation 0.85 0.49597 -0.2523544000000001
+  rotation 0.12639856358922474 -0.98772783930152 0.0917448559393473 7.627674793492215e-17
+  children [
+    DEF box Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 0.1 0.6 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE box
+  physics Physics {
+  }
+}
+Solid {
+  translation 1.52 -0.12403 -0.2523544000000001
+  rotation 0.432294084635364 0.8011156260885978 0.4139270201689502 3.367489741075016e-17
+  children [
+    DEF box Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 0.1 0.6 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE box
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.69 0.58597 -0.2523544000000001
+  rotation -0.5214736836233245 0.8502397498014564 -0.07181618999834036 8.521387247330802e-17
+  children [
+    DEF box Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 0.1 0.6 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE box
+  physics Physics {
+  }
+}
+Solid {
+  translation -1.61 -0.22403 -0.2523544000000001
+  rotation -0.4310713319075016 0.6712746577488035 -0.6029658702378762 2.325248327242566e-17
+  children [
+    DEF box Shape {
+      appearance Asphalt {
+      }
+      geometry Box {
+        size 0.1 0.6 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE box
+  physics Physics {
+  }
+}

@@ -1,0 +1,121 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.13636569045210853 0.08344842629073232 0.987137659405779 2.0547927312086216
+  position 0.6416182194352746 -1.0949961858466322 0.4135322197735738
+}
+TexturedBackground {
+  texture "mars"
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 0 -0.19
+}
+Robot {
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 1.732 1 0
+        anchor -0.0519617 -0.03 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "_y_x_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.0519617 -0.03 -0.05
+        rotation 0.37796500919324283 0.6546520159231014 0.6546550159231742 2.41886
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1.732 1 0
+        anchor 0.0519613 -0.030000100000000002 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "_yx_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.0519613 -0.030000100000000002 -0.05
+        rotation 0.3779652566288584 -0.654651444491788 -0.6546554444945039 2.418865307179586
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0.06 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "y_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.06 -0.05
+        rotation 1 0 0 1.5707996938995747
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.02
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+}
