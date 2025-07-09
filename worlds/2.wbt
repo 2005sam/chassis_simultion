@@ -7,8 +7,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.13636569045210853 0.08344842629073232 0.987137659405779 2.0547927312086216
-  position 0.6416182194352746 -1.0949961858466322 0.4135322197735738
+  orientation -0.02161209007411386 0.9982770613698206 0.05455113477705042 0.7557311200818657
+  position -1.0318273524712778 0.29889365647343613 0.5337240149940359
 }
 TexturedBackground {
   texture "mars"
@@ -27,12 +27,12 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "_y_x_motor"
+          name "motor_BL"
         }
       ]
       endPoint Solid {
         translation -0.0519617 -0.03 -0.05
-        rotation 0.37796500919324283 0.6546520159231014 0.6546550159231742 2.41886
+        rotation -0.37796194289203355 -0.6546559010851013 0.6546529010855546 2.4188553071795864
         children [
           DEF wheel Shape {
             appearance PBRAppearance {
@@ -56,12 +56,12 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "_yx_motor"
+          name "motor_BR"
         }
       ]
       endPoint Solid {
-        translation 0.0519613 -0.030000100000000002 -0.05
-        rotation 0.3779652566288584 -0.654651444491788 -0.6546554444945039 2.418865307179586
+        translation 0.0504646 -0.0301242 -0.0507514
+        rotation -0.3760805060590644 0.6553688793079638 0.6550229652439535 3.8604679595602716
         children [
           DEF wheel Shape {
             appearance PBRAppearance {
@@ -80,17 +80,17 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        axis 0 1 0
+        axis 0 -1 0
         anchor 0 0.06 -0.05
       }
       device [
         RotationalMotor {
-          name "y_motor"
+          name "motor_F"
         }
       ]
       endPoint Solid {
         translation 0 0.06 -0.05
-        rotation 1 0 0 1.5707996938995747
+        rotation 0.9999999999982307 -1.8811599999966718e-06 -9.589789999983032e-09 1.5708053071795867
         children [
           DEF wheel Shape {
             appearance PBRAppearance {
@@ -118,4 +118,5 @@ Robot {
   boundingObject USE body
   physics Physics {
   }
+  controller "my_controller2"
 }
