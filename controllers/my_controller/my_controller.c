@@ -32,6 +32,8 @@ void turn (void)
             break;
         //(wb_distance_sensor_get_value(distance_sensor[0])<500)
          //   break;
+        if((target_number>=0.999&&cur_number>=0.999)||(target_number<=-0.999&&cur_number<=-0.999))
+            break;
     }
     
 }
