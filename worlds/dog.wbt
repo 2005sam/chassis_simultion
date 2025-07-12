@@ -1,0 +1,345 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.11705955141899882 0.3904918838870885 0.9131336977901403 0.6344132638609051
+  position -1.180201447587588 -0.7668347603449249 0.13845430860707164
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 0 -0.44
+}
+Robot {
+  children [
+    Group {
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0.5
+            anchor 0.125 0.125 0
+          }
+          device [
+            RotationalMotor {
+              name "leg_fr_u"
+              maxVelocity 200
+            }
+          ]
+          endPoint Solid {
+            translation 0.125 0.1729425538604203 -0.08775825618903726
+            rotation 1 0 0 0.5000000000000004
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -1
+                  anchor 0.05 0 -0.075
+                }
+                device [
+                  RotationalMotor {
+                    name "leg_fr_l"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0.05 -0.06311032386059223 -0.11552267294011048
+                  rotation -1 0 0 0.9999999999999998
+                  children [
+                    Solid {
+                      translation 0 0 -0.1
+                      children [
+                        DEF feet Shape {
+                          appearance PBRAppearance {
+                            baseColor 0 1 0
+                          }
+                          geometry Sphere {
+                            radius 0.0353
+                          }
+                        }
+                      ]
+                      boundingObject USE feet
+                      physics Physics {
+                      }
+                    }
+                    DEF leg_l Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 1 0
+                      }
+                      geometry Box {
+                        size 0.05 0.05 0.2
+                      }
+                    }
+                  ]
+                  boundingObject USE leg_l
+                  physics Physics {
+                  }
+                }
+              }
+              DEF leg_u Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                }
+                geometry Box {
+                  size 0.05 0.05 0.2
+                }
+              }
+            ]
+            name "solid(3)"
+            boundingObject USE leg_u
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    Group {
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0.5
+            anchor 0.125 -0.125 0
+          }
+          device [
+            RotationalMotor {
+              name "leg_br_u"
+              maxVelocity 200
+            }
+          ]
+          endPoint Solid {
+            translation 0.125 -0.0770574461395795 -0.08775825618903729
+            rotation 1 0 0 0.5000000000000004
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -1
+                  anchor 0.05 0 -0.075
+                }
+                device [
+                  RotationalMotor {
+                    name "leg_br_l"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0.05 -0.06311032386059229 -0.11552267294011051
+                  rotation -1 0 0 0.9999999999999998
+                  children [
+                    Solid {
+                      translation 0 0 -0.1
+                      children [
+                        DEF feet Shape {
+                          appearance PBRAppearance {
+                            baseColor 0 1 0
+                          }
+                          geometry Sphere {
+                            radius 0.0353
+                          }
+                        }
+                      ]
+                      boundingObject USE feet
+                      physics Physics {
+                      }
+                    }
+                    DEF leg_l Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 1 0
+                      }
+                      geometry Box {
+                        size 0.05 0.05 0.2
+                      }
+                    }
+                  ]
+                  boundingObject USE leg_l
+                  physics Physics {
+                  }
+                }
+              }
+              DEF leg_u Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                }
+                geometry Box {
+                  size 0.05 0.05 0.2
+                }
+              }
+            ]
+            name "solid(2)"
+            boundingObject USE leg_u
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    Group {
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0.5
+            anchor -0.125 -0.125 0
+          }
+          device [
+            RotationalMotor {
+              name "leg_bl_u"
+              maxVelocity 200
+            }
+          ]
+          endPoint Solid {
+            translation -0.125 -0.07705744613957898 -0.08775825618903639
+            rotation 1 0 0 0.5000000000000004
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -1
+                  anchor 0.05 0 -0.075
+                }
+                device [
+                  RotationalMotor {
+                    name "leg_bl_l"
+                  }
+                ]
+                endPoint Solid {
+                  translation -0.04999999999999931 -0.06311032386059216 -0.11552267294011044
+                  rotation -1 0 0 0.9999999999999998
+                  children [
+                    Solid {
+                      translation 0 0 -0.1
+                      children [
+                        DEF feet Shape {
+                          appearance PBRAppearance {
+                            baseColor 0 1 0
+                          }
+                          geometry Sphere {
+                            radius 0.0353
+                          }
+                        }
+                      ]
+                      boundingObject USE feet
+                      physics Physics {
+                      }
+                    }
+                    DEF leg_l Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 1 0
+                      }
+                      geometry Box {
+                        size 0.05 0.05 0.2
+                      }
+                    }
+                  ]
+                  boundingObject USE leg_l
+                  physics Physics {
+                  }
+                }
+              }
+              DEF leg_u Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                }
+                geometry Box {
+                  size 0.05 0.05 0.2
+                }
+              }
+            ]
+            name "solid(1)"
+            boundingObject USE leg_u
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    Group {
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 0.5
+            anchor -0.125 0.125 0
+          }
+          device [
+            RotationalMotor {
+              name "leg_fl_u"
+              consumptionFactor 200
+            }
+          ]
+          endPoint Solid {
+            translation -0.125 0.1729425538604203 -0.08775825618903726
+            rotation 1 0 0 0.5000000000000004
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -1
+                  anchor 0.05 0 -0.075
+                }
+                device [
+                  RotationalMotor {
+                    name "leg_fl_l"
+                  }
+                ]
+                endPoint Solid {
+                  translation -0.05 -0.06311032386059223 -0.11552267294011048
+                  rotation -1 0 0 0.9999999999999998
+                  children [
+                    Solid {
+                      translation 0 0 -0.1
+                      children [
+                        DEF feet Shape {
+                          appearance PBRAppearance {
+                            baseColor 0 1 0
+                          }
+                          geometry Sphere {
+                            radius 0.0353
+                          }
+                        }
+                      ]
+                      boundingObject USE feet
+                      physics Physics {
+                      }
+                    }
+                    DEF leg_l Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 1 0
+                      }
+                      geometry Box {
+                        size 0.05 0.05 0.2
+                      }
+                    }
+                  ]
+                  boundingObject USE leg_l
+                  physics Physics {
+                  }
+                }
+              }
+              DEF leg_u Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                }
+                geometry Box {
+                  size 0.05 0.05 0.2
+                }
+              }
+            ]
+            boundingObject USE leg_u
+            physics Physics {
+            }
+          }
+        }
+      ]
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+      }
+      geometry Box {
+        size 0.2 0.5 0.1
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+}
